@@ -19,6 +19,7 @@ function LoginForm(props) {
     }
 
     const handleSubmitClick = (e) => {
+        redirectToHome();
         e.preventDefault();
         const payload={
             "email":state.email,
