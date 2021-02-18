@@ -7,6 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import InboxIcon from '@material-ui/icons/Inbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
+import KitchenIcon from '@material-ui/icons/Kitchen';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,26 +29,42 @@ export default function PurchaseHistory() {
       <List component="nav" aria-label="main mailbox folders">
         <ListItem button>
           <ListItemIcon>
-            <InboxIcon />
+            <KitchenIcon />
           </ListItemIcon>
-          <ListItemText primary="Inbox" />
+          <ListItemText primary="Grocery 1" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <DraftsIcon />
+            <KitchenIcon />
           </ListItemIcon>
-          <ListItemText primary="Drafts" />
+          <ListItemText primary="Grocery 2" />
         </ListItem>
-      </List>
-      <Divider />
-      <List component="nav" aria-label="secondary mailbox folders">
         <ListItem button>
-          <ListItemText primary="Trash" />
+          <ListItemIcon>
+            <KitchenIcon />
+          </ListItemIcon>
+          <ListItemText primary="Grocery 3" />
         </ListItem>
-        <ListItemLink href="#simple-list">
-          <ListItemText primary="Spam" />
-        </ListItemLink>
+        <ListItem button>
+          <ListItemIcon>
+            <KitchenIcon />
+          </ListItemIcon>
+          <ListItemText primary="Grocery 4" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <KitchenIcon />
+          </ListItemIcon>
+          <ListItemText primary="Grocery 5" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <KitchenIcon />
+          </ListItemIcon>
+          <ListItemText primary="Grocery 6" />
+        </ListItem>
       </List>
+      
     </div>
   );
 }
