@@ -11,6 +11,7 @@ import {
   Route
 } from "react-router-dom";
 import AlertComponent from './components/AlertComponent/AlertComponent';  
+import PurchaseHistory from './components/PurchaseHistory/PurchaseHistory';
 function App() {
   const [title, updateTitle] = useState(null);
   const [errorMessage, updateErrorMessage] = useState(null);
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/login">
               <LoginForm showError={updateErrorMessage} updateTitle={updateTitle}/>
+            </Route>
+            <Route path="/purchasehistory">
+              <PurchaseHistory showError={updateErrorMessage} updateTitle={updateTitle}/>
             </Route>
             <PrivateRoute path="/home">
               <Home/>

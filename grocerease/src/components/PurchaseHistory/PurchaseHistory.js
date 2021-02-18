@@ -20,7 +20,7 @@ function ListItemLink(props) {
   return <ListItem button component="a" {...props} />;
 }
 
-export default function Home() {
+export default function PurchaseHistory() {
   const classes = useStyles();
 
   return (
