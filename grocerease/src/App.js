@@ -34,7 +34,7 @@ function App() {
               <PurchaseHistory showError={updateErrorMessage} updateTitle={updateTitle}/>
             </Route>
             <PrivateRoute path="/home">
-              <Home/>
+            <Home showError={updateErrorMessage} updateTitle={updateTitle}/>
             </PrivateRoute>
           </Switch>
           <AlertComponent errorMessage={errorMessage} hideError={updateErrorMessage}/>

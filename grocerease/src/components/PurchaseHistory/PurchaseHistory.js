@@ -4,10 +4,9 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import InboxIcon from '@material-ui/icons/Inbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
 import KitchenIcon from '@material-ui/icons/Kitchen';
+import PurchaseList from '../PurchaseList/PurchaseList';
+// import PurchaseList from './components/PurchaseList'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,11 +21,13 @@ function ListItemLink(props) {
 }
 
 export default function PurchaseHistory() {
+  
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <List component="nav" aria-label="main mailbox folders">
+      <PurchaseList/>
+      {/* <List component="nav" aria-label="main mailbox folders">
         <ListItem button>
           <ListItemIcon>
             <KitchenIcon />
@@ -63,7 +64,7 @@ export default function PurchaseHistory() {
           </ListItemIcon>
           <ListItemText primary="Grocery 6" />
         </ListItem>
-      </List>
+      </List> */}
       
     </div>
   );
