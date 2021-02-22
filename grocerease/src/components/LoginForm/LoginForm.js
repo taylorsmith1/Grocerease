@@ -19,13 +19,13 @@ function LoginForm(props) {
     }
 
     const handleSubmitClick = (e) => {
-        redirectToHome();
+        // redirectToHome();
         e.preventDefault();
         const payload={
             "email":state.email,
             "password":state.password,
         }
-        axios.post(API_BASE_URL+'/user/login', payload)
+        axios.post(API_BASE_URL+'/v1/login', payload)
             .then(function (response) {
                 if(response.status === 200){
                     setState(prevState => ({
