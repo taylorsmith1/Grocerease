@@ -50,7 +50,29 @@ class PurchaseList extends Component{
     render() {
         return (
             <div className="container">
-                <h3>All Courses</h3>
+                <h3>All Purchases</h3>
+                <div className="container">
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Date Purchased</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Chicken Nuggets</td>
+                                <td>2</td>
+                                <td>3/2/21</td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+                <h3>Most Commonly Purchased</h3>
                 <div className="container">
                     <table className="table">
                         <thead>
@@ -62,12 +84,14 @@ class PurchaseList extends Component{
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Learn Full stack with Spring Boot and Angular</td>
+                                <td>Chicken Nuggets</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+
+            
         )
     }
 
