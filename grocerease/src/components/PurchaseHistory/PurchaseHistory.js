@@ -27,8 +27,6 @@ export default function PurchaseHistory() {
 
   return (
     <div className={classes.root}>
-      <SearchBar
-      />
       <PurchaseList/>
       {/* <List component="nav" aria-label="main mailbox folders">
         <ListItem button>
