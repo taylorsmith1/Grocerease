@@ -172,7 +172,7 @@ export default function PurchaseList() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered variant={"fullWidth"}>
           <Tab label="All Purchases" {...a11yProps(0)} />
           <Tab label="Most Commonly Purchased" {...a11yProps(1)} />
         </Tabs>
@@ -186,18 +186,18 @@ export default function PurchaseList() {
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Description</th>
                                 <th>Quantity</th>
+                                <th>Price</th>
                                 <th>Date Purchased</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
                                 <td>Chicken Nuggets</td>
-                                <td>2</td>
-                                <td>3/2/21</td>
+                                <td>77</td>
+                                <td>0.40</td>
+                                <td>3/5/21</td>
                             </tr>
                         </tbody>
                         
