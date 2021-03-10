@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
 @Controller
 public class UserController {
     @Autowired
@@ -25,6 +24,7 @@ public class UserController {
     @Autowired
     private UserValidator userValidator;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/v1/registration")
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
@@ -32,6 +32,7 @@ public class UserController {
         return "registration";
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/v1/registration")
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
         userValidator.validate(userForm, bindingResult);
@@ -47,6 +48,7 @@ public class UserController {
         return "redirect:/welcome";
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/v1/login")
     public String login(Model model, String error, String logout) {
         if (error != null)
@@ -58,6 +60,7 @@ public class UserController {
         return "login";
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
         return "welcome";
