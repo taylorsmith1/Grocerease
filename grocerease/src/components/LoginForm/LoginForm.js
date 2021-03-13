@@ -58,13 +58,17 @@ function LoginForm(props) {
     return(
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
             <form>
-                <div className="form-group text-left">
+                <div className="form-group text-center">
+                <label htmlFor="loginInstructions" style={{"font-size": "20px"}}>Log into your Grocerease account</label>
+                </div>
+                <div className="form-group text-left" >
                 <label htmlFor="exampleInputEmail1">Email address</label>
                 <input type="email" 
                        className="form-control" 
+                       style={{"width":"500px", "height": "60px","border": "solid deepskyblue",'borderRadius':'10px'}}
                        id="email" 
                        aria-describedby="emailHelp" 
-                       placeholder="Enter email" 
+                       placeholder="email address" 
                        value={state.email}
                        onChange={handleChange}
                 />
@@ -74,6 +78,7 @@ function LoginForm(props) {
                 <label htmlFor="exampleInputPassword1">Password</label>
                 <input type="password" 
                        className="form-control" 
+                       style={{"width":"500px", "height": "60px","border": "solid deepskyblue",'borderRadius':'10px'}}
                        id="password" 
                        placeholder="Password"
                        value={state.password}
@@ -83,15 +88,16 @@ function LoginForm(props) {
                 <div className="form-check">
                 </div>
                 <button 
-                    type="submit" 
+                    type="Submit" 
                     className="btn btn-primary"
+                    style={{"width":"400px", "height": "40px","border": "solid dodgerblue",'borderRadius':'10px'}}
                     onClick={handleSubmitClick}
-                >Submit</button>
+                >Log In</button>
             </form>
             <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
                 {state.successMessage}
             </div>
-            <div className="registerMessage">
+            <div className="registerMessage" style={{"margin-top":"5%"}}>
                 <span>Dont have an account? </span>
                 <span className="loginText" onClick={() => redirectToRegister()}>Register</span> 
             </div>

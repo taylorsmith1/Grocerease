@@ -1,5 +1,6 @@
 .login-card {
-    min-height: 60vh;
+    min-height: 55vh;
+    border-color: white;
 }
 
 .registerMessage {

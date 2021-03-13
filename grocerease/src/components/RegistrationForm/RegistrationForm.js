@@ -72,7 +72,7 @@ function RegistrationForm(props) {
                        className="form-control" 
                        id="email" 
                        aria-describedby="emailHelp" 
-                       placeholder="Enter email" 
+                       placeholder="nnlknln" 
                        value={state.email}
                        onChange={handleChange}
                 />
