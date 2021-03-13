@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
 import { ACCESS_TOKEN_NAME } from '../../constants/apiConstants';
+import myImage from "../ncart-logo.png";
 function Header(props) {
     const capitalize = (s) => {
         if (typeof s !== 'string') return ''
@@ -8,7 +9,7 @@ function Header(props) {
     }
     let title = capitalize(props.location.pathname.substring(1,props.location.pathname.length))
     if(props.location.pathname === '/') {
-        title = 'Welcome'
+        title = ''
     }
     function renderLogout() {
         if(props.location.pathname === '/home'){
@@ -24,10 +25,15 @@ function Header(props) {
         props.history.push('/login')
     }
     return(
-        <nav className="navbar navbar-dark bg-primary">
-            <div className="row col-12 d-flex justify-content-center text-white">
+        <nav className="navbar navbar-light">
+            <div className="row-20 col-12 d-flex justify-content-center text-white">
                 <span className="h3">{props.title || title}</span>
                 {renderLogout()}
+            </div>
+            <div className="row-20 col-12">
+                <div className="myImage">
+                    <img src = {myImage} width = "471" height = "296" alt="grocerease logo"/>
+                </div>
             </div>
         </nav>
     )
