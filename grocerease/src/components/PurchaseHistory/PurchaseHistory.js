@@ -7,6 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import KitchenIcon from '@material-ui/icons/Kitchen';
 import PurchaseList from '../PurchaseList/PurchaseList';
 // import PurchaseList from './components/PurchaseList'
+import SearchBar from "material-ui-search-bar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
