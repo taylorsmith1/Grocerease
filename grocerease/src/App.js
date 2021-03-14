@@ -18,7 +18,10 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <Header title={title}/>
+      {/* prevent header on login + register pages */}
+      {window.location.pathname.split("/").pop() === '' ||
+       window.location.pathname.split("/").pop() === 'login' ||
+       window.location.pathname.split("/").pop() === 'register' ? null : <Header/>}
         <div className="container d-flex align-items-center flex-column">
           <Switch>
             <Route path="/" exact={true}>
