@@ -3,6 +3,7 @@ import axios from 'axios';
 import './LoginForm.css';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstants';
 import { withRouter } from "react-router-dom";
+import logo from "../ncart-logo.png";
 
 function LoginForm(props) {
     const [state , setState] = useState({
@@ -56,7 +57,10 @@ function LoginForm(props) {
         props.updateTitle('Register');
     }
     return(
-        <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+        <div className="card login-card mt-2 hv-center">
+            <div className="logo">
+                    <img src = {logo} width = "354" height = "222" alt="grocerease logo"/>
+            </div>
             <form>
                 <div className="form-group text-left">
                 <label htmlFor="exampleInputEmail1">Email address</label>
@@ -68,7 +72,6 @@ function LoginForm(props) {
                        value={state.email}
                        onChange={handleChange}
                 />
-                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div className="form-group text-left">
                 <label htmlFor="exampleInputPassword1">Password</label>
@@ -88,11 +91,8 @@ function LoginForm(props) {
                     onClick={handleSubmitClick}
                 >Submit</button>
             </form>
-            <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
-                {state.successMessage}
-            </div>
             <div className="registerMessage">
-                <span>Dont have an account? </span>
+                <span>Don't have an account? </span>
                 <span className="loginText" onClick={() => redirectToRegister()}>Register</span> 
             </div>
         </div>

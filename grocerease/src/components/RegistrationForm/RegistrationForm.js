@@ -3,6 +3,7 @@ import axios from 'axios';
 import './RegistrationForm.css';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstants';
 import { withRouter } from "react-router-dom";
+import logo from "../ncart-logo.png";
 
 function RegistrationForm(props) {
     const [state , setState] = useState({
@@ -64,7 +65,10 @@ function RegistrationForm(props) {
         }
     }
     return(
-        <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+        <div className="card reg-card mt-2 hv-center">
+            <div className="logo">
+                    <img src = {logo} width = "354" height = "222" alt="grocerease logo"/>
+            </div>
             <form>
                 <div className="form-group text-left">
                 <label htmlFor="exampleInputEmail1">Email address</label>
@@ -76,7 +80,6 @@ function RegistrationForm(props) {
                        value={state.email}
                        onChange={handleChange}
                 />
-                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div className="form-group text-left">
                     <label htmlFor="exampleInputPassword1">Password</label>
@@ -98,12 +101,11 @@ function RegistrationForm(props) {
                         onChange={handleChange} 
                     />
                 </div>
+                
                 <button 
                     type="submit" 
                     className="btn btn-primary"
-                    onClick={handleSubmitClick}
-                >
-                    Register
+                    onClick={handleSubmitClick}>Register
                 </button>
             </form>
             <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
