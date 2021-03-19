@@ -35,7 +35,7 @@ function LoginForm(props) {
                     }))
                     localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
                     redirectToHome();
-                    props.showError(null)
+                    props.showError(null);
                 }
                 else if(response.code === 204){
                     props.showError("Username and password do not match");
@@ -50,11 +50,13 @@ function LoginForm(props) {
     }
     const redirectToHome = () => {
         props.updateTitle('Home')
-        props.history.push('/home');
+        props.history.push('/home')
+        props.showError(null);
     }
     const redirectToRegister = () => {
-        props.history.push('/register'); 
-        props.updateTitle('Register');
+        props.history.push('/register')
+        props.updateTitle('Register')
+        props.showError(null);;
     }
     return(
         <div className="card login-card mt-2 hv-center">
@@ -83,13 +85,14 @@ function LoginForm(props) {
                        onChange={handleChange} 
                 />
                 </div>
-                <div className="form-check">
+                <div class="text-center">
+                    <button
+                        type="submit" 
+                        className="btn btn-primary"
+                        onClick={handleSubmitClick}>
+                    Submit
+                    </button>
                 </div>
-                <button 
-                    type="submit" 
-                    className="btn btn-primary"
-                    onClick={handleSubmitClick}
-                >Submit</button>
             </form>
             <div className="registerMessage">
                 <span>Don't have an account? </span>

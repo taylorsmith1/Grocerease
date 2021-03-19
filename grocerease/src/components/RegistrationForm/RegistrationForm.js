@@ -35,7 +35,7 @@ function RegistrationForm(props) {
                         }))
                         localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
                         redirectToHome();
-                        props.showError(null)
+                        props.showError(null);
                     } else{
                         props.showError("Some error ocurred");
                     }
@@ -50,16 +50,18 @@ function RegistrationForm(props) {
     }
     const redirectToHome = () => {
         props.updateTitle('Home')
-        props.history.push('/home');
+        props.history.push('/home')
+        props.showError(null);
     }
     const redirectToLogin = () => {
         props.updateTitle('Login')
-        props.history.push('/login'); 
+        props.history.push('/login')
+        props.showError(null); 
     }
     const handleSubmitClick = (e) => {
         e.preventDefault();
         if(state.password === state.confirmPassword) {
-            sendDetailsToServer()    
+            sendDetailsToServer();    
         } else {
             props.showError('Passwords do not match');
         }
@@ -101,12 +103,14 @@ function RegistrationForm(props) {
                         onChange={handleChange} 
                     />
                 </div>
-                
-                <button 
-                    type="submit" 
-                    className="btn btn-primary"
-                    onClick={handleSubmitClick}>Register
-                </button>
+                <div class="text-center">
+                    <button 
+                        type="submit" 
+                        className="btn btn-primary"
+                        onClick={handleSubmitClick}>
+                    Register
+                    </button>
+                </div>
             </form>
             <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
                 {state.successMessage}

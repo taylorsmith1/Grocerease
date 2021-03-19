@@ -2,14 +2,8 @@ import React from 'react';
 import { withRouter } from "react-router-dom";
 import './Header.css';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+import { NavLink } from 'react-router-dom';
+import { NavDropdown} from 'react-bootstrap';
 import { ACCESS_TOKEN_NAME } from '../../constants/apiConstants';
 
 const useStyles = makeStyles((theme) => ({
@@ -73,45 +67,32 @@ function Header(props) {
         localStorage.removeItem(ACCESS_TOKEN_NAME)
         props.history.push('/login')
     }
-    return(
-        <AppBar position="static">
-        <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" className={classes.title}>
-                {props.title || title}
-            </Typography>
-            <div>
-                <IconButton
-                    aria-label="account of current user"
-                    aria-controls="menu-appbar"
-                    aria-haspopup="true"
-                    onClick={handleMenu}
-                    color="inherit"
-                >
-                    <AccountCircle />
-                </IconButton>
-                <Menu
-                    id="menu-appbar"
-                    anchorEl={anchorEl}
-                    anchorOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                    }}
-                    onClose={handleClose}
-                >
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                </Menu>
+    return (
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <a class="navbar-brand navbar-brand-custom" href="/home">Grocerease</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <NavLink className="navlink text-white navbar-item" 
+                    to='/home' 
+                    activeClassName="navbar-item-active">
+                    Home
+                </NavLink>
+                <NavLink className="navlink text-white navbar-item" 
+                    to='/purchaseHistory' 
+                    activeClassName="navbar-item-active">
+                    Purchase History
+                </NavLink>
+                </ul>
             </div>
-        </Toolbar>
-      </AppBar>
+            <NavDropdown title={<span className="text-white">Account</span>}
+                id="nav-dropdown">
+                <NavDropdown.Item eventKey="4.1">Account Settings</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.2">Notifications</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.3">Privacy</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item eventKey="4.4">Log Out</NavDropdown.Item>
+            </NavDropdown>
+        </nav>
     )
 }
 export default withRouter(Header);
