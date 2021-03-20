@@ -1,10 +1,9 @@
 import React from 'react';
-import { withRouter } from "react-router-dom";
-import './Header.css';
+import { withRouter, NavLink } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
-import { NavLink } from 'react-router-dom';
 import { NavDropdown} from 'react-bootstrap';
 import { ACCESS_TOKEN_NAME } from '../../constants/apiConstants';
+import './Header.css';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -80,7 +79,7 @@ function Header(props) {
                 <NavLink className="navlink text-white navbar-item" 
                     to='/purchaseHistory' 
                     activeClassName="navbar-item-active">
-                    Purchase History
+                    Purchases
                 </NavLink>
                 </ul>
             </div>
