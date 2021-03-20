@@ -47,12 +47,30 @@ function LoginForm(props) {
                 console.log(error);
             });
     }
+
+    const handleSubmitClick2 = (e) => {
+        e.preventDefault();
+        axios.get(API_BASE_URL+'/welcome')
+            .then(function (response) {
+                if(response.status === 200){
+                    setState(prevState => ({
+                        ...prevState,
+                        'successMessage' : 'Login successful. Redirecting to home page..'
+                    }))
+                    redirectToHome();
+                    props.showError(null)
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
     const redirectToHome = () => {
         props.updateTitle('Home')
         props.history.push('/home');
     }
     const redirectToRegister = () => {
-        props.history.push('/register'); 
+        props.history.push('/register');
         props.updateTitle('Register');
     }
     return(
@@ -85,7 +103,7 @@ function LoginForm(props) {
                 <button 
                     type="submit" 
                     className="btn btn-primary"
-                    onClick={handleSubmitClick}
+                    onClick={handleSubmitClick2}
                 >Submit</button>
             </form>
             <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
