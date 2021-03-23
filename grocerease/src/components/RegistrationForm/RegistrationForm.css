@@ -8,19 +8,3 @@
     color: green;
     font-weight: bold;
 }
-
-/*THIS IS FOR THE TEXT BOXES*/
-.form-control{
-    width: 400px;
-    height: 60px;
-    border: solid;
-    border-color: deepskyblue;
-    border-radius: 10px;
-}
-
-/*THIS IS THE REGISTER BOX*/
-.reg-card{
-    width: 500px;
-    background: white;
-    border-color: white;
-}

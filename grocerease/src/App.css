@@ -1,5 +1,5 @@
-body{
-  background-color: #0072CE;
+.App {
+  text-align: center;
 }
 
 .hv-center {
@@ -7,5 +7,3 @@ body{
   justify-content: center;
   align-items: center;
 }
-
-
