@@ -47,6 +47,6 @@ public class InventoryServiceImplementation implements InventoryService {
 
     @Override
     public Set<Purchases> findPurchasesByDate(Date date) {
-        return new HashSet<>(this.purchaseRepository.findAllByDatePurchased(date));
+        return new HashSet<>(this.purchaseRepository.findAllByDatePurchasedLike(date));
     }
 }

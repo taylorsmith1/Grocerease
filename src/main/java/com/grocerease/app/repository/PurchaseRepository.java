@@ -9,5 +9,5 @@ import java.util.Set;
 public interface PurchaseRepository extends JpaRepository<Purchases, String> {
     Set<Purchases> findAllByUsername(String username);
 
-    Set<Purchases> findAllByDatePurchased(Date date);
+    Set<Purchases> findAllByDatePurchasedLike(Date date);
 }
