@@ -17,6 +17,8 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
+=======
+import myImage from "../ncart-logo.png";
 function Header(props) {
     const classes = useStyles();
     const [auth, setAuth] = React.useState(true);
@@ -38,7 +40,7 @@ function Header(props) {
     }
     let title = capitalize(props.location.pathname.substring(1,props.location.pathname.length))
     if(props.location.pathname === '/') {
-        title = 'Welcome'
+        title = ''
     }
     
     const handleChange = (event) => {
@@ -91,6 +93,18 @@ function Header(props) {
                 <NavDropdown.Divider />
                 <NavDropdown.Item eventKey="4.4">Log Out</NavDropdown.Item>
             </NavDropdown>
+=======
+    return(
+        <nav className="navbar navbar-light">
+            <div className="row-20 col-12 d-flex justify-content-center text-white">
+                <span className="h3">{props.title || title}</span>
+                {renderLogout()}
+            </div>
+            <div className="row-20 col-12">
+                <div className="myImage">
+                    <img src = {myImage} width = "471" height = "296" alt="grocerease logo"/>
+                </div>
+            </div>
         </nav>
     )
 }

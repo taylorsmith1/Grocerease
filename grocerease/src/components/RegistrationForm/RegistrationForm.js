@@ -72,13 +72,17 @@ function RegistrationForm(props) {
                     <img src = {logo} width = "354" height = "222" alt="grocerease logo"/>
             </div>
             <form>
+                <div className="form-group text-center">
+                <label htmlFor="registrationInstructions" style={{"font-size": "20px"}}>Register for your Grocerease account</label>
+                </div>
                 <div className="form-group text-left">
                 <label htmlFor="exampleInputEmail1">Email address</label>
                 <input type="email" 
                        className="form-control" 
+                       style={{"width":"500px", "height": "60px","border": "solid deepskyblue",'borderRadius':'10px'}}
                        id="email" 
                        aria-describedby="emailHelp" 
-                       placeholder="Enter email" 
+                       placeholder="Email address" 
                        value={state.email}
                        onChange={handleChange}
                 />
@@ -87,6 +91,7 @@ function RegistrationForm(props) {
                     <label htmlFor="exampleInputPassword1">Password</label>
                     <input type="password" 
                         className="form-control" 
+                        style={{"width":"500px", "height": "60px","border": "solid deepskyblue",'borderRadius':'10px'}}
                         id="password" 
                         placeholder="Password"
                         value={state.password}
@@ -97,6 +102,7 @@ function RegistrationForm(props) {
                     <label htmlFor="exampleInputPassword1">Confirm Password</label>
                     <input type="password" 
                         className="form-control" 
+                        style={{"width":"500px", "height": "60px","border": "solid deepskyblue",'borderRadius':'10px'}}
                         id="confirmPassword" 
                         placeholder="Confirm Password"
                         value={state.confirmPassword}
@@ -108,6 +114,13 @@ function RegistrationForm(props) {
                         type="submit" 
                         className="btn btn-primary"
                         onClick={handleSubmitClick}>
+=======
+                <button 
+                    type="submit" 
+                    className="btn btn-primary"
+                    style={{"width":"400px", "height": "40px","border": "solid dodgerblue",'borderRadius':'10px'}}
+                    onClick={handleSubmitClick}
+                >
                     Register
                     </button>
                 </div>
@@ -115,7 +128,7 @@ function RegistrationForm(props) {
             <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
                 {state.successMessage}
             </div>
-            <div className="mt-2">
+            <div className="mt-2" style={{"margin-top":"5%"}}>
                 <span>Already have an account? </span>
                 <span className="loginText" onClick={() => redirectToLogin()}>Login here</span> 
             </div>
