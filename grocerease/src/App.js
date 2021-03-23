@@ -12,17 +12,23 @@ import {
 } from "react-router-dom";
 import AlertComponent from './components/AlertComponent/AlertComponent';  
 import PurchaseHistory from './components/PurchaseHistory/PurchaseHistory';
+
 function App() {
+  // title = curr. state val, update func. 
   const [title, updateTitle] = useState(null);
+  // errorMessage = curr. state val, update func.
   const [errorMessage, updateErrorMessage] = useState(null);
   return (
     <Router>
     <div className="App">
-      <Header title={title}/>
+      {/* prevent header on login + register pages */}
+      {window.location.pathname.split("/").pop() === '' ||
+       window.location.pathname.split("/").pop() === 'login' ||
+       window.location.pathname.split("/").pop() === 'register' ? null : <Header/>}
         <div className="container d-flex align-items-center flex-column">
           <Switch>
             <Route path="/" exact={true}>
-              <RegistrationForm showError={updateErrorMessage} updateTitle={updateTitle}/>
+              <LoginForm showError={updateErrorMessage} updateTitle={updateTitle}/>
             </Route>
             <Route path="/register">
               <RegistrationForm showError={updateErrorMessage} updateTitle={updateTitle}/>
