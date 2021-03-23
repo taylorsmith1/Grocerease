@@ -3,7 +3,6 @@ import axios from 'axios';
 import './LoginForm.css';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstants';
 import { withRouter } from "react-router-dom";
-import logo from "../ncart-logo.png";
 
 function LoginForm(props) {
     const [state , setState] = useState({
@@ -35,7 +34,7 @@ function LoginForm(props) {
                     }))
                     localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
                     redirectToHome();
-                    props.showError(null);
+                    props.showError(null)
                 }
                 else if(response.code === 204){
                     props.showError("Username and password do not match");
@@ -50,19 +49,14 @@ function LoginForm(props) {
     }
     const redirectToHome = () => {
         props.updateTitle('Home')
-        props.history.push('/home')
-        props.showError(null);
+        props.history.push('/home');
     }
     const redirectToRegister = () => {
-        props.history.push('/register')
-        props.updateTitle('Register')
-        props.showError(null);;
+        props.history.push('/register'); 
+        props.updateTitle('Register');
     }
     return(
-        <div className="card login-card mt-2 hv-center">
-            <div className="logo">
-                    <img src = {logo} width = "354" height = "222" alt="grocerease logo"/>
-            </div>
+        <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
             <form>
                 <div className="form-group text-center">
                 <label htmlFor="loginInstructions" style={{"font-size": "20px"}}>Log into your Grocerease account</label>
@@ -78,6 +72,7 @@ function LoginForm(props) {
                        value={state.email}
                        onChange={handleChange}
                 />
+                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div className="form-group text-left">
                 <label htmlFor="exampleInputPassword1">Password</label>
@@ -90,18 +85,8 @@ function LoginForm(props) {
                        onChange={handleChange} 
                 />
                 </div>
-                <div class="text-center">
-                    <button
-                        type="submit" 
-                        className="btn btn-primary"
-                        onClick={handleSubmitClick}>
-                    Submit
-                    </button>
+                <div className="form-check">
                 </div>
-            </form>
-            <div className="registerMessage">
-                <span>Don't have an account? </span>
-=======
                 <button 
                     type="Submit" 
                     className="btn btn-primary"
