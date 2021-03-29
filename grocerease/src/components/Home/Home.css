@@ -1,4 +1,5 @@
 .scrolling-wrapper{
+    background-color: white;
 	overflow-x: auto;
     -ms-overflow-style: none;  /* hides scrollbar in IE and Edge */
     scrollbar-width: none;  /* hides scrollbar in Firefox */
@@ -11,20 +12,15 @@
 .card-block{
     width: 300px;
 	height: 250px;
-	background-color: #fff;
-	border: none;
+	background-color: white;
 	background-position: center;
 	background-size: cover;
 	transition: all 0.2s ease-in-out !important;
-	border-radius: 24px;
+	border-radius: 2px;
+    border-color: black;
 }
 
 .card-block:hover{
     transform: translateY(-5px);
-    box-shadow: none;
-}
 
-.card-1 {
-    background-color: white;
 }
-
