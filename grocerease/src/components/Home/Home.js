@@ -1,19 +1,29 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import SearchBar from "material-ui-search-bar";
+import './Home.css';
+import ProductCard from './ProductCard';
 
 export default function Home() {
   return (
-  <div>
-    <br/>
-    <h3> WELCOME!</h3>
-  </div>
+    <div class="container-fluid">
+      <br/>
+      <h4>Recently Purchased</h4>
+      <div class="scrolling-wrapper row flex-row flex-nowrap mt-0 pb-0 pt-0">
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+      </div>
+      <br/><br/>
+      <h4>Purchase Again Soon</h4>
+      <div class="scrolling-wrapper row flex-row flex-nowrap mt-0 pb-0 pt-0">
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+      </div>
+    </div>
   );
 }
 // export default PurchaseList
