@@ -2,24 +2,32 @@ import React, {Component} from 'react';
 import './Home.css';
 import ProductCard from './ProductCard';
 
-function getItem(num) {
-    return 'Item #' + num;
+function getItem() {
+    var items = Array("Pizza Sauce", "Hashbrowns", "Dino Nuggets", "Oranges", "Ketchup", "Lemons", "Paper Plates")
+    return items[items.length * Math.random() | 0];
+}
+
+function getPrice() {
+    return Math.floor(Math.random() * Math.floor(20)) * Math.random();
 }
 
 class ScrollBar extends Component {
     render() {
-        const item01 = getItem(1);
-        const item02 = getItem(2);
-
         return (
-        <div class="scrolling-wrapper row flex-row flex-nowrap mb-5 pb-2 pt-2">
-            <ProductCard product_name={item01}/>
-            <ProductCard product_name={item02}/>
-            <ProductCard product_name={item01}/>
-            <ProductCard product_name={item02}/>
-            <ProductCard product_name={item01}/>
-            <ProductCard product_name={item02}/>
-        </div>
+            <div class="container-fluid custom-container mt-4 pt-3">
+                <h2>{this.props.title}</h2>
+                <div class="scrolling-wrapper row flex-row flex-nowrap mb-4 pb-2 pt-2">
+                    <ProductCard product_name={getItem()} item_description={"yummy!"} price={getPrice()}/>
+                    <ProductCard product_name={getItem()} item_description={"yummy!"} price={getPrice()}/>
+                    <ProductCard product_name={getItem()} item_description={"yummy!"} price={getPrice()}/>
+                    <ProductCard product_name={getItem()} item_description={"yummy!"} price={getPrice()}/>
+                    <ProductCard product_name={getItem()} item_description={"yummy!"} price={getPrice()}/>
+                    <ProductCard product_name={getItem()} item_description={"yummy!"} price={getPrice()}/>
+                    <ProductCard product_name={getItem()} item_description={"yummy!"} price={getPrice()}/>
+                    <ProductCard product_name={getItem()} item_description={"yummy!"} price={getPrice()}/>
+
+                </div>
+            </div>
         );
     }
 }
