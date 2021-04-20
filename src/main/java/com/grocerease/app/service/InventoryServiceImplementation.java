@@ -1,9 +1,7 @@
 package com.grocerease.app.service;
 
 import com.grocerease.app.model.Items;
-import com.grocerease.app.model.Purchases;
 import com.grocerease.app.repository.ItemRepository;
-import com.grocerease.app.repository.PurchaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,19 +13,11 @@ import java.util.Set;
 public class InventoryServiceImplementation implements InventoryService {
 
     @Autowired
-    private PurchaseRepository purchaseRepository;
-
-    @Autowired
     private ItemRepository itemRepository;
 
     @Override
     public void saveItem(Items item) {
         itemRepository.save(item);
-    }
-
-    @Override
-    public void savePurchase(Purchases purchase) {
-        purchaseRepository.save(purchase);
     }
 
     @Override
@@ -41,12 +31,29 @@ public class InventoryServiceImplementation implements InventoryService {
     }
 
     @Override
-    public Set<Purchases> findPurchasesByUsername(String username) {
-        return new HashSet<>(this.purchaseRepository.findAllByUsername(username));
+    public Set<Items> findByPurchaseLocationLike(String purchaseLocation) {
+        return new HashSet<>(this.itemRepository.findByPurchaseLocationLike(purchaseLocation));
     }
 
     @Override
-    public Set<Purchases> findPurchasesByDate(Date date) {
-        return new HashSet<>(this.purchaseRepository.findAllByDatePurchasedLike(date));
+    public Set<Items> findFirst10ByOrOrderByPurchaseDateDesc() {
+        return new HashSet<>(this.itemRepository.findFirst10ByOrderByPurchaseDateDesc());
     }
+
+    @Override
+    public Set<Items> findAllByPurchaseDate(Date date) {
+        return new HashSet<>(this.itemRepository.findAllByPurchaseDate(date));
+    }
+
+    @Override
+    public Set<Items> findAllByBrandLike(String brand) {
+        return new HashSet<>(this.itemRepository.findAllByBrandLike(brand));
+    }
+
+    @Override
+    public Set<Items> findAllByUsernameLike(String username) {
+        return new HashSet<>(this.itemRepository.findAllByUsernameLike(username));
+    }
+
+
 }

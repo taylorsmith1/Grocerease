@@ -1,6 +1,10 @@
 package com.grocerease.app.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UserController {
@@ -28,8 +32,8 @@ public class UserController {
 //
 //        return "redirect:/welcome";
 //    }
-//
-//    @CrossOrigin(origins = "http://localhost:3000")
+
+//    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:8080"})
 //    @PostMapping("/v1/login")
 //    public String login(Model model, String error, String logout) {
 //        if (error != null)
@@ -41,7 +45,7 @@ public class UserController {
 //        return "login";
 //    }
 //
-//    @CrossOrigin(origins = "http://localhost:3000")
+//    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:8080"})
 //    @GetMapping("/v1/login")
 //    public String getlogin(Model model, String error, String logout) {
 //        if (error != null)
@@ -53,7 +57,7 @@ public class UserController {
 //        return "login";
 //    }
 //
-//    @CrossOrigin(origins = "http://localhost:3000")
+//    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:8080"})
 //    @GetMapping({"/", "/welcome"})
 //    public String welcome(Model model) {
 //        return "welcome";

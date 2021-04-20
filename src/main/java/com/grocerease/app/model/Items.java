@@ -1,89 +1,59 @@
 package com.grocerease.app.model;
 
 import javax.persistence.*;
-import java.math.BigInteger;
-import java.util.Set;
+import java.util.Date;
 
 @Entity
-@Table(name = "items2")
+@Table(name = "purchased_items")
 public class Items {
     @Id
     @GeneratedValue
+    @Column(name = "item_number", nullable = false)
     private Integer itemNumber;
 
-    private String crawlTimestamp;
-
-    private String productUrl;
-
-    private String productName;
-
-    private String description;
-
-    private double listPrice;
-
-    private double salePrice;
+    private int available;
 
     private String brand;
 
-    private BigInteger gtin;
-
-    private String packageSize;
-
     private String category;
 
-    private String postalCode;
+    @Column(name = "purchase_date")
+    private Date purchaseDate;
 
-    private String available;
+    @Column(name = "item_description")
+    private String itemDescription;
 
-    @ManyToMany
-    private Set<Purchases> purchases;
+    private String gtin;
 
-    public String getCrawlTimestamp() {
-        return crawlTimestamp;
+    private double price;
+
+    @Column(name = "product_name")
+    private String productName;
+
+    @Column(name = "image_url")
+    private String imageUrl;
+
+    private Date expiration;
+
+    private String username;
+
+    @Column(name = "purchase_location")
+    private String purchaseLocation;
+
+    public Integer getItemNumber() {
+        return itemNumber;
     }
 
-    public void setCrawlTimestamp(String crawl_timestamp) {
-        this.crawlTimestamp = crawl_timestamp;
+    public void setItemNumber(Integer item_number) {
+        this.itemNumber = item_number;
     }
 
-    public String getProductUrl() {
-        return productUrl;
+    public int getAvailable() {
+        return available;
     }
 
-    public void setProductUrl(String product_url) {
-        this.productUrl = product_url;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String product_name) {
-        this.productName = product_name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public double getListPrice() {
-        return listPrice;
-    }
-
-    public void setListPrice(double list_price) {
-        this.listPrice = list_price;
-    }
-
-    public double getSalePrice() {
-        return salePrice;
-    }
-
-    public void setSalePrice(double sale_price) {
-        this.salePrice = sale_price;
+    public void setAvailable(int available) {
+        this.available = available;
     }
 
     public String getBrand() {
@@ -94,30 +64,6 @@ public class Items {
         this.brand = brand;
     }
 
-    public Integer getItemNumber() {
-        return itemNumber;
-    }
-
-    public void setItemNumber(Integer item_number) {
-        this.itemNumber = item_number;
-    }
-
-    public BigInteger getGtin() {
-        return gtin;
-    }
-
-    public void setGtin(BigInteger gtin) {
-        this.gtin = gtin;
-    }
-
-    public String getPackageSize() {
-        return packageSize;
-    }
-
-    public void setPackageSize(String package_size) {
-        this.packageSize = package_size;
-    }
-
     public String getCategory() {
         return category;
     }
@@ -126,27 +72,75 @@ public class Items {
         this.category = category;
     }
 
-    public String getPostalCode() {
-        return postalCode;
+    public Date getPurchaseDate() {
+        return purchaseDate;
     }
 
-    public void setPostalCode(String postal_code) {
-        this.postalCode = postal_code;
+    public void setPurchaseDate(Date purchase_date) {
+        this.purchaseDate = purchase_date;
     }
 
-    public String getAvailable() {
-        return available;
+    public String getItemDescription() {
+        return itemDescription;
     }
 
-    public void setAvailable(String available) {
-        this.available = available;
+    public void setItemDescription(String item_description) {
+        this.itemDescription = item_description;
     }
 
-    public Set<Purchases> getPurchases() {
-        return purchases;
+    public String getGtin() {
+        return gtin;
     }
 
-    public void setPurchases(Set<Purchases> purchases) {
-        this.purchases = purchases;
+    public void setGtin(String gtin) {
+        this.gtin = gtin;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String product_name) {
+        this.productName = product_name;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String image_url) {
+        this.imageUrl = image_url;
+    }
+
+    public Date getExpiration() {
+        return expiration;
+    }
+
+    public void setExpiration(Date expiration) {
+        this.expiration = expiration;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPurchaseLocation() {
+        return purchaseLocation;
+    }
+
+    public void setPurchaseLocation(String purchase_location) {
+        this.purchaseLocation = purchase_location;
     }
 }
