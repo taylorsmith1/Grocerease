@@ -38,13 +38,13 @@ function createData(date, merchant, store, total, items) {
 }
 
 const rows = [
-  createData(Date('Sun May 11,2014'), 'Kroger', '#672 Atlanta, GA 30316', 33.71, 10),
-  createData(Date(10), 'Kroger', '#672 Atlanta, GA 30316', 15.64, 4),
-  createData(Date(10), 'Kroger', '#672 Atlanta, GA 30316', 24.92, 6),
-  createData(Date(10), 'Kroger', '#672 Atlanta, GA 30316', 117.62, 24),
-  createData(Date(10), 'Kroger', '#672 Atlanta, GA 30316', 11.16, 4),
-  createData(Date(10), 'Kroger', '#672 Atlanta, GA 30316', 44.23, 8),
-  createData(Date(10), 'Kroger', '#672 Atlanta, GA 30316', 91.08, 15)
+  createData("09/20/2020", 'Kroger', '#672 Atlanta, GA 30316', 33.71, 10),
+  createData("08/20/2020", 'Kroger', '#1422 Brookhaven, GA 30319', 15.64, 4),
+  createData("09/18/2020", 'Kroger', '#290 Austin, TX 78702', 24.92, 6),
+  createData("10/02/2020", 'Kroger', '#672 Atlanta, GA 30316', 117.62, 24),
+  createData("09/27/2020", 'Kroger', '#1422 Brookhaven, GA 30319', 11.16, 4),
+  createData("08/30/2020", 'Kroger', '#1109 Atlanta, GA 30309', 44.23, 8),
+  createData("10/25/2020", 'Kroger', '#672 Atlanta, GA 30316', 91.08, 15)
 ];
 
 function descendingComparator(a, b, orderBy) {
