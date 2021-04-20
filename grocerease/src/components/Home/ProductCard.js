@@ -13,7 +13,7 @@ class ProductCard extends Component {
                 <div class="card card-block pt-5 pb-5 pl-4 pr-4">
                     <div class="row my-auto">
                         <div class="col-4 card image-card">
-                            <img src="logo192.png"></img>
+                            <img src={this.props.imgurl}></img>
                         </div>
                         <div class="col-8">
                             <h5>{this.props.product_name}</h5>
