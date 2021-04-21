@@ -7,8 +7,8 @@ const INSTRUCTOR_API_URL = `${API_URL}/instructors/${INSTRUCTOR}`
 
 class CourseDataService {
 
-    retrieveAllCourses(name) {
-        return axios.get(`${INSTRUCTOR_API_URL}/courses`);
+    retrieveAllPurchases(name) {
+        return axios.get(`http://grocerease-env.eba-dtky2evz.us-east-2.elasticbeanstalk.com/v1/get_last_ten`);
     }
 }
 
