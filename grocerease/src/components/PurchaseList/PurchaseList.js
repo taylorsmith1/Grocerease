@@ -47,7 +47,7 @@ class PurchaseList extends Component {
   render() {
     return (
         <div className="container">
-            <h3>All Courses</h3>
+            <h3>All Purchases</h3>
             <div className="container">
                 <table className="table">
                     <thead>
@@ -62,7 +62,11 @@ class PurchaseList extends Component {
                                 row =>
                                     <tr key={row.productName}>
                                         <td>{row.productName}</td>
-                                        {/* <td>{course.description}</td> */}
+                                        <td>{row.price}</td>
+                                        <td>{row.PurchaseDate}</td>
+                                        <td>{row.username}</td>
+                                        <td>{row.purchaseLocation}</td>
+                                        {/* <img src={row.imageURL}/> */}
                                     </tr>
                             )
                         }
