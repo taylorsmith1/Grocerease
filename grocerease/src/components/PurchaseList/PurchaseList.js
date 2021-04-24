@@ -52,7 +52,11 @@ class PurchaseList extends Component {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>item</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Purchase Date</th>
+                            <th>User</th>
+                            <th>Purchase Location</th>
                             {/* <th>Description</th> */}
                         </tr>
                     </thead>
