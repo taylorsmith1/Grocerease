@@ -1,6 +1,7 @@
 import React from 'react';
 import PurchaseList from '../PurchaseList/PurchaseList';
 import './PurchaseHistory.css';
+import TableComponent from '../TableComponent/TableComponent'
 
 
 export default function PurchaseHistory() {
@@ -22,7 +23,7 @@ export default function PurchaseHistory() {
     
     <div class="tab-content" id="purchaseTabsContent">
       <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab"><PurchaseList/></div>
-      <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="Other-tab"></div>
+      <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="Other-tab"><TableComponent/></div>
   </div>
   </div>
   );
