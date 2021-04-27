@@ -8,6 +8,7 @@ BUG FIXES:
   Product pictures show up and are no longer stuck on loading sign
 KNOWN BUGS:
   Other purchases tab is not viewable unless the mouse hovers over its location
+  Add button doesn’t work 50% of the time
 
 # Install Guide Grocerease 1.0
 PRE-REQUISITES
